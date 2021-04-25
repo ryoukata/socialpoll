@@ -1,0 +1,41 @@
+version: '3'
+services:
+  ### NSQ settings
+  nsqlookupd:
+    image: nsqio/nsq
+    container_name: twitter-votes-nsqlookupd
+    hostname: twitter-votes-nsqlookupd
+    command: /nsqlookupd
+    ports:
+      - 4160:4160
+      - 4161:4161
+    networks:
+      - twitter-votes
+  nsqd:
+    image: nsqio/nsq
+    container_name: twitter-votes-nsqd
+    hostname: twitter-votes-nsqd
+    command: /nsqd --lookupd-tcp-address=nsqlookupd:4160
+    depends_on:
+      - nsqlookupd
+    ports:
+      - 4150:4150
+      - 4151:4151
+    networks:
+      -  twitter-votes
+  nsqadmin:
+    image: nsqio/nsq
+    container_name: twitter-votes-nsqd_admin
+    hostname: twitter-votes-nsqd_admin
+    command: /nsqadmin --lookupd-http-address=nsqlookupd:4161
+    depends_on:
+      - nsqlookupd  
+    ports:
+      - 4171:4171
+    networks:
+      -  twitter-votes
+
+### Network settings
+networks:
+  twitter-votes:
+    external: true

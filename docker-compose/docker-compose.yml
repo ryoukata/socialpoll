@@ -34,6 +34,21 @@ services:
       - 4171:4171
     networks:
       -  twitter-votes
+  ### MongoDB settings
+  mongodb:
+    image: mongo
+    container_name: twitter-votes-mongodb
+    hostname: twitter-votes-mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: mongo
+    ports:
+      - "27017:27017"
+    networks:
+      -  twitter-votes
+    volumes:
+      - ~/workspace/twitter-votes/db:/data/db
+      - ~/workspace/twitter-votes/configdb:/data/configdb
 
 ### Network settings
 networks:

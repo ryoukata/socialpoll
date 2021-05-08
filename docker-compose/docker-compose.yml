@@ -49,6 +49,13 @@ services:
     volumes:
       - ~/workspace/twitter-votes/db:/data/db
       - ~/workspace/twitter-votes/configdb:/data/configdb
+  ### Twittervotes aaplication settings
+  twittervotes:
+    image: ghcr.io/ryoukata/twitter-votes-app/twitter-votes
+    container_name: twitter-votes-app
+    hostname: twitter-votes-app
+    networks:
+      -  twitter-votes
 
 ### Network settings
 networks:

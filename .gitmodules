@@ -1,3 +1,6 @@
 [submodule "twittervotes"]
 	path = twittervotes
 	url = ./twittervotes
+[submodule "counter"]
+	path = counter
+	url = ./counter

@@ -56,6 +56,14 @@ services:
     hostname: twitter-votes-app
     networks:
       -  twitter-votes
+  ### counter application settings
+  counter-app:
+    image: ghcr.io/ryoukata/twitter-votes-app/counter
+    container_name: counter-app
+    hostname: counter-app
+    networks:
+      -  twitter-votes
+
 
 ### Network settings
 networks:

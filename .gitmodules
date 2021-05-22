@@ -4,3 +4,6 @@
 [submodule "counter"]
 	path = counter
 	url = ./counter
+[submodule "twittervotes-api"]
+	path = twittervotes-api
+	url = ./twittervotes-api

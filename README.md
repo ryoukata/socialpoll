@@ -6,3 +6,4 @@ This project include below projects.
 - [twittervotes](https://github.com/ryoukata/twittervotes)
 - [counter](https://github.com/ryoukata/counter)
 - [twittervotes-api](https://github.com/ryoukata/twittervotes-api)
+- [twittervotes-client](https://github.com/ryoukata/twittervotes-client)

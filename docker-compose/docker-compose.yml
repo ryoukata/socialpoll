@@ -54,6 +54,9 @@ services:
     image: ghcr.io/ryoukata/twitter-votes-app/twitter-votes
     container_name: twitter-votes-app
     hostname: twitter-votes-app
+    depends_on:
+      - nsqlookupd
+      - mongodb
     networks:
       -  twitter-votes
   ### counter application settings
@@ -61,6 +64,20 @@ services:
     image: ghcr.io/ryoukata/twitter-votes-app/counter
     container_name: counter-app
     hostname: counter-app
+    depends_on:
+      - nsqlookupd
+      - mongodb
+    networks:
+      -  twitter-votes
+  ### counter application settings
+  twittervotes-api:
+    image: ghcr.io/ryoukata/twitter-votes-app/twittervotes-api
+    container_name: twittervotes-api
+    hostname: twittervotes-api
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongodb
     networks:
       -  twitter-votes
 

@@ -1,12 +1,9 @@
 [submodule "twittervotes"]
 	path = twittervotes
-	url = ./twittervotes
+	url = https://github.com/ryoukata/twittervotes.git
 [submodule "counter"]
 	path = counter
-	url = ./counter
+	url = https://github.com/ryoukata/counter.git
 [submodule "twittervotes-api"]
 	path = twittervotes-api
-	url = ./twittervotes-api
-[submodule "twittervotes-client"]
-	path = twittervotes-client
-	url = ./twittervotes-client
+	url = https://github.com/ryoukata/twittervotes-api.git

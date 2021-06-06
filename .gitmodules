@@ -7,6 +7,3 @@
 [submodule "twittervotes-api"]
 	path = twittervotes-api
 	url = ./twittervotes-api
-[submodule "twittervotes-client"]
-	path = twittervotes-client
-	url = ./twittervotes-client

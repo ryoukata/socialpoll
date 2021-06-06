@@ -7,3 +7,6 @@
 [submodule "twittervotes-api"]
 	path = twittervotes-api
 	url = https://github.com/ryoukata/twittervotes-api.git
+[submodule "twittervotes-client"]
+	path = twittervotes-client
+	url = https://github.com/ryoukata/twittervotes-client.git

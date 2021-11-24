@@ -49,7 +49,7 @@ services:
     volumes:
       - ~/workspace/twitter-votes/db:/data/db
       - ~/workspace/twitter-votes/configdb:/data/configdb
-  ### Twittervotes aaplication settings
+  ### Twittervotes application settings
   twittervotes:
     image: ghcr.io/ryoukata/twitter-votes-app/twitter-votes
     container_name: twitter-votes-app
@@ -69,7 +69,7 @@ services:
       - mongodb
     networks:
       -  twitter-votes
-  ### counter application settings
+  ### Twittervotes api application settings
   twittervotes-api:
     image: ghcr.io/ryoukata/twitter-votes-app/twittervotes-api
     container_name: twittervotes-api
@@ -80,7 +80,17 @@ services:
       - mongodb
     networks:
       -  twitter-votes
-
+  ### Twittervotes client application settings
+  twittervotes-client:
+    image: ghcr.io/ryoukata/twitter-votes-app/twittervotes-client
+    container_name: twittervotes-client
+    hostname: twittervotes-client
+    ports:
+      - "3000:3000"
+    depends_on:
+      - twittervotes-api
+    networks:
+      -  twitter-votes
 
 ### Network settings
 networks:
